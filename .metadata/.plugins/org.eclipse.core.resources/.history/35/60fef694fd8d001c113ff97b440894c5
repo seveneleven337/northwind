@@ -1,0 +1,77 @@
+package fi.vamk.database.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@Table(indexes = {
+		@Index(columnList = "id"),
+		//@Index(columnList = "company"),	
+})
+public class Orders {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	//relation
+	//employees_id
+	
+	
+	//relation
+	//customer_id
+	
+	@Column(length = 512, columnDefinition="DATETIME")
+	private String order_date;
+	
+	@Column(length = 512, columnDefinition="DATETIME")
+	private String shipped_date;
+	
+	//relation
+	//shipper_id
+	
+	private String ship_name;
+	
+	@Column(length = 512, columnDefinition="LONGTEXT")
+	private String ship_address;
+	
+	private String ship_city;
+	
+	private String ship_state_province;
+	
+	private String ship_zip_postal_code;
+	
+	private String ship_country_region;
+	
+	private double shipping_fee;
+	
+	private double taxes;
+	
+	private String payment_type;
+	
+	@Column(length = 512, columnDefinition="DATETIME")
+	private String paid_date;
+	
+	@Column(length = 512, columnDefinition="LONGTEXT", nullable=false)
+	private String notes;
+	
+	private double tax_rate;
+	
+	private int tax_status_id;
+	
+	private int status_id;
+	
+	
+	
+	
+}

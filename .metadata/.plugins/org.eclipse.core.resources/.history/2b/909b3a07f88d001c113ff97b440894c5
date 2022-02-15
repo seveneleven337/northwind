@@ -1,0 +1,18 @@
+package fi.vamk.database.entity;
+
+import javax.persistence.Entity;
+
+import lombok.Getter;
+
+@Entity
+@Getter
+@Setter
+public class Employee_privileges {
+
+	@Id
+	private int employee_id;
+	
+	@Id
+	private int privilege_id;
+	
+}
