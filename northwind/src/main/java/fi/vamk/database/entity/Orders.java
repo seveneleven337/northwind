@@ -17,10 +17,7 @@ import lombok.Setter;
 @Setter
 @Table(indexes = {	
 		@Index(columnList = "id"),
-		//@Index(columnList = "shipper_id"),
-		@Index(columnList = "tax_status_id"),
 		@Index(columnList = "ship_zip_postal_code"),	
-		@Index(columnList = "status_id"),
 
 })
 public class Orders {
@@ -42,8 +39,8 @@ public class Orders {
 	@Column(length = 512, columnDefinition="DATETIME")
 	private String shipped_date;
 	
-	//relation
-	//shipper_id
+	@OneToOne
+	private Shippers shippers;
 	
 	private String ship_name;
 	
@@ -75,11 +72,11 @@ public class Orders {
 	@Column(length = 512, columnDefinition="DOUBLE")
 	private double tax_rate;
 	
-	@Column(length = 512, columnDefinition="TINYINT")
-	private int tax_status_id;
+	@OneToOne
+	private Orders_tax_status tax_status;
 	
-	@Column(length = 512, columnDefinition="TINYINT")
-	private int status_id;
+	@OneToOne
+	private Order_status status;
 	
 	
 	

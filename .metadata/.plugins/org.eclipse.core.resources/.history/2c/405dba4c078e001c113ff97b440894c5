@@ -1,0 +1,5 @@
+package fi.vamk.database.entity;
+
+public class Orders_tax_status {
+
+}
