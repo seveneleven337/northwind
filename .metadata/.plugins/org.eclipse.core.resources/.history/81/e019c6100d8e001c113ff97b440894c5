@@ -1,0 +1,5 @@
+package fi.vamk.database.entity;
+
+public class Purchase_order_details {
+
+}

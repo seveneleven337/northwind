@@ -78,7 +78,4 @@ public class Orders {
 	@OneToOne
 	private Order_status status;
 	
-	
-	
-	
 }
